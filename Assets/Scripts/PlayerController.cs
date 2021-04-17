@@ -17,8 +17,11 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     float sprintInput;
 
+
+    TMPro.TMP_Text tmpText;
     private void Start()
     {
+        tmpText.text = "";
         Cursor.lockState = CursorLockMode.Locked;
     }
 
