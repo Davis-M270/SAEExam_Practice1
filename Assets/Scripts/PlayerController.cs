@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform followTransform;
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody rigidbody;
+    [SerializeField] Transform rotation;
+    [SerializeField] Camera mainCam;
+    [SerializeField] internal float currentWeight;
+    [SerializeField] internal float maxWeight;
 
     Vector2 moveInput;
     Vector2 lookInput;
@@ -28,12 +32,29 @@ public class PlayerController : MonoBehaviour
         lookInput = new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
         sprintInput = Input.GetAxis("Sprint");
 
+        if (PlayerAim.pickUpFreeze == true)
+        { 
+            rotation.rotation = mainCam.transform.rotation;
+            rigidbody.velocity = Vector3.zero;
+            mainCam.transform.rotation = rotation.rotation;
+            return;
+        }
+
         UpdateFollowTargetRotation();
 
         float speed = 0;
 
-        speed = Mathf.Lerp(walkSpeed, sprintSpeed, sprintInput);
+        if (currentWeight <= maxWeight)
+        { 
+            speed = Mathf.Lerp(walkSpeed, sprintSpeed, sprintInput);
+        }
+        else 
+        {
+            speed = walkSpeed;
+        }
         Vector3 movement = (transform.forward * moveInput.y * speed) + (transform.right * moveInput.x * speed);
+
+
         rigidbody.velocity = new Vector3(movement.x, rigidbody.velocity.y, movement.z);
 
         animator.SetFloat("MovementSpeed", moveInput.y * (speed / walkSpeed));
