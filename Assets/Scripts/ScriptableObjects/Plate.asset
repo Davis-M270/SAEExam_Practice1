@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a643fba41f169f34e8db0c4c0434a802, type: 3}
   m_Name: Plate
   m_EditorClassIdentifier: 
-  itemName: 
-  weight: 0
+  itemName: Plate
+  weight: 1
   value: 0
-  description: 
-  category: 
+  description: Put food on here, because you're not an animal...eat with class.
+  category: Cooking

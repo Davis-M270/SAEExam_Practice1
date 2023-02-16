@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a643fba41f169f34e8db0c4c0434a802, type: 3}
   m_Name: Goo
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Goo
   weight: 0
-  value: 0
-  description: 
-  category: 
+  value: 2
+  description: Gathered from Slimes...makes my pockets sticky
+  category: Crafting

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a643fba41f169f34e8db0c4c0434a802, type: 3}
   m_Name: Broom
   m_EditorClassIdentifier: 
-  itemName: 
-  weight: 0
-  value: 0
-  description: 
-  category: 
+  itemName: Broom
+  weight: 5
+  value: 3
+  description: I broom made from leftover straw from the harvest.
+  category: Tool
